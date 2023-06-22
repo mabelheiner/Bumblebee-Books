@@ -1,0 +1,30 @@
+/* COLORS:
+    Black: #000000
+    Naples Yellow: #FFE25F
+    Gunmetal: #1E2D2F
+    White: #FFFFFF
+    Battleship Gray: #7E8D85 
+*/
+/* FONTS: 
+    Roboto, 
+    Roboto Slab, 
+    Cinzel, 
+    Aleygra Sans SC
+*/
+
+/* navbar css */
+#menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    background-color: #FFE25F;
+}
+li {
+    margin: 15px;
+    font-size: larger;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+/* end of navbar css */
