@@ -1,9 +1,13 @@
+const ny_api_key = import.meta.env.VITE_NY_API_KEY;
+const google_books_api_key = import.meta.env.VITE_GOOGLE_BOOKS_API_KEY;
+
 async function getData() {
-    const response = await fetch('https://api.nytimes.com/svc/books/v3/lists.json?list-name=hardcover-fiction&api-key=v1OBR5VQay1gkrGZ8FVwvuxSUYFEG84A');
+    const response = await fetch('https://api.nytimes.com/svc/books/v3/lists.json?list-name=hardcover-fiction&api-key=' + ny_api_key);
     let book_div = document.getElementById("aBook");
+    book_div.innerHTML = "<p>Loading top favorites...</p>";
     let book_list = "";
     if (response.ok){
-        data = await response.json()
+        const data = await response.json()
         //console.log(data)
   
         const results = [];
@@ -14,7 +18,7 @@ async function getData() {
         //console.log("Results: ", results)
   
         for (let i = 0; i < results.length; i++){
-            const details = await fetch('https://www.googleapis.com/books/v1/volumes?q=intitle:' + results[i] + '&filter=paid-ebooks&key=AIzaSyDfpv-I46KRDNwioegRR1fzS4eGPpVnVdk');
+            const details = await fetch('https://www.googleapis.com/books/v1/volumes?q=intitle:' + results[i] + '&filter=paid-ebooks&key=' + google_books_api_key);
   
             const book_info = await details.json();
   
@@ -27,10 +31,10 @@ async function getData() {
             }
         }
 
-        book_div.innerHTML += book_list;
+        book_div.innerHTML = book_list;
     }
     else {
-        console.log("an error occurred");
+      book_div.innerHTML = "<p>Sorry, unable to load top favorites at this time, please search for a book to find it.</p>";
     }
   }
   getData();
