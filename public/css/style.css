@@ -23,10 +23,15 @@
 }
 /* end of color css codes */
 
+#top-header {
+    display: block;
+}
+
 /* navbar css */
 #menu {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     list-style-type: none;
     background-color: #FFE25F;
 }
@@ -65,4 +70,31 @@ ul#aBook {
 #aBook div i{
     padding-bottom: 1rem;
 }
-/* END OF STYLING FOR BOOK CARDS ON HOME PAGE CSS */
+
+/**********************
+***** HERO IMAGE ******
+**********************/
+#heroImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+#heroText {
+    text-align:center;
+    position: absolute;
+    top: 350px;
+    left: 27%;
+    background-color: #FFE25F;
+    padding: 10px;
+    border-radius: 10px;
+}
+#companyMoto {
+    text-align: center;
+    margin: 50px;
+}
+#book h2, #book p {
+    text-align: center;
+}
