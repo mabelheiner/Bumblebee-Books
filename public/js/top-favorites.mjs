@@ -26,7 +26,7 @@ async function getData() {
   
             if (book_info.totalItems > 0){
   
-              book_list += `<div><img src=${book_info.items[0].volumeInfo.imageLinks.thumbnail} alt=${book_info.items[0].volumeInfo.title}><h2>` + book_info.items[0].volumeInfo.title + `</h2><p>` + book_info.items[0].volumeInfo.authors[0] + `</p>` + `<i>` + book_info.items[0].saleInfo.listPrice.amount + `</i></div><br>`;
+              book_list += `<div><img src=${book_info.items[0].volumeInfo.imageLinks.thumbnail} alt=${book_info.items[0].volumeInfo.title}><h2>` + book_info.items[0].volumeInfo.title + `</h2><p>` + book_info.items[0].volumeInfo.authors[0] + `</p>` + `<i>$` + book_info.items[0].saleInfo.listPrice.amount + `</i></div><br>`;
               //console.log(results[i]);
             }
         }
