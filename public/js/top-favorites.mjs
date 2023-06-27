@@ -4,7 +4,7 @@ const google_books_api_key = import.meta.env.VITE_GOOGLE_BOOKS_API_KEY;
 async function getData() {
     const response = await fetch('https://api.nytimes.com/svc/books/v3/lists.json?list-name=hardcover-fiction&api-key=' + ny_api_key);
     let book_div = document.getElementById("aBook");
-    book_div.innerHTML = "<p>Loading top favorites...</p>";
+    book_div.innerHTML = "<p><i>Loading top favorites...</i></p>";
     let book_list = "";
     if (response.ok){
         const data = await response.json()
@@ -17,7 +17,7 @@ async function getData() {
   
         //console.log("Results: ", results)
   
-        for (let i = 0; i < results.length; i++){
+        for (let i = 0; i < results.length && i < 10; i++){
             const details = await fetch('https://www.googleapis.com/books/v1/volumes?q=intitle:' + results[i] + '&filter=paid-ebooks&key=' + google_books_api_key);
   
             const book_info = await details.json();
