@@ -11,6 +11,14 @@
     Cinzel, 
     Aleygra Sans SC
 */
+:root {
+    --black: #000000;
+    --naplesYellow: #FFE25F;
+    --lightYellow: rgb(241, 244, 230);
+    --gunmetal: #1E2D2F;
+    --white: #FFFFFF;
+    --battleshipGray: #7E8D85;
+}
 
 /* navbar css */
 #menu {
@@ -28,3 +36,29 @@ a {
     color: black;
 }
 /* end of navbar css */
+
+/*STYLING FOR BOOK CARDS ON HOME PAGE*/
+ul#aBook {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+}
+#aBook div {
+    background: var(--lightYellow);
+    width: 15em;
+    margin: 0.5rem;
+    align-items: center;
+    text-align: center;
+    border: 6px solid var(--battleshipGray);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#aBook div img{
+    padding-top: 1rem;
+}
+#aBook div i{
+    padding-bottom: 1rem;
+}
