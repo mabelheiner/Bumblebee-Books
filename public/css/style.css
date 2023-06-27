@@ -11,6 +11,8 @@
     Cinzel, 
     Aleygra Sans SC
 */
+
+/* color css codes */
 :root {
     --black: #000000;
     --naplesYellow: #FFE25F;
@@ -19,6 +21,7 @@
     --white: #FFFFFF;
     --battleshipGray: #7E8D85;
 }
+/* end of color css codes */
 
 /* navbar css */
 #menu {
@@ -62,3 +65,4 @@ ul#aBook {
 #aBook div i{
     padding-bottom: 1rem;
 }
+/* END OF STYLING FOR BOOK CARDS ON HOME PAGE CSS */
