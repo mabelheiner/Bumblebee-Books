@@ -1,6 +1,7 @@
 const google_books_api_key = import.meta.env.VITE_GOOGLE_BOOKS_API_KEY;
 
 let main = document.querySelector("main");
+main.setAttribute('id', "aBook");
 
 async function getBooks(){
     main.innerHTML = "";
@@ -20,9 +21,14 @@ async function getBooks(){
 
             for (let i = 0; i < results.length; i++){
                 let book_div = main.appendChild(document.createElement('div'));
-                book_div.classList.add("book");
 
-                book_div.innerHTML += `<img src=${results[i].volumeInfo.imageLinks.thumbnail} alt=${results[i].volumeInfo.title}><h2>` + results[i].volumeInfo.title + `</h2>`+ `<a href=${results[i].saleInfo.buyLink} target='_blank'>Buy Here</a>` + `<p>` +  results[i].volumeInfo.description + `</p>`;
+                if (results[i].volumeInfo.averageRating){
+                    book_div.innerHTML += `<img src=${results[i].volumeInfo.imageLinks.thumbnail} alt=${results[i].volumeInfo.title}><h2>` + results[i].volumeInfo.title + `</h2>`+ `<i>` + results[i].volumeInfo.authors[0] + `</i><p>` + results[i].volumeInfo.averageRating + '★</p><p>' + results[i].volumeInfo.categories[0] + `</p>`;
+                }
+
+                else {
+                    book_div.innerHTML += `<img src=${results[i].volumeInfo.imageLinks.thumbnail} alt=${results[i].volumeInfo.title}><h2>` + results[i].volumeInfo.title + `</h2>`+ `<i>` + results[i].volumeInfo.authors[0] + `</i><p>` + results[i].volumeInfo.categories[0] + `</p>`;
+                }
             }
         }
         else {
@@ -51,7 +57,13 @@ async function getAuthor(){
                 let book_div = main.appendChild(document.createElement('div'));
                 book_div.classList.add("book");
 
-                book_div.innerHTML += `<img src=${results[i].volumeInfo.imageLinks.thumbnail} alt=${results[i].volumeInfo.title}><h2>` + results[i].volumeInfo.title + `</h2>`+ `<a href=${results[i].saleInfo.buyLink} target='_blank'>Buy Here</a>` + `<p>` +  results[i].volumeInfo.description + `</p>`;
+                if (results[i].volumeInfo.averageRating){
+                    book_div.innerHTML += `<img src=${results[i].volumeInfo.imageLinks.thumbnail} alt=${results[i].volumeInfo.title}><h2>` + results[i].volumeInfo.title + `</h2>`+ `<i>` + results[i].volumeInfo.authors[0] + `</i><p>` + results[i].volumeInfo.averageRating + '★</p><p>' + results[i].volumeInfo.categories[0] + `</p>`;
+                }
+
+                else {
+                    book_div.innerHTML += `<img src=${results[i].volumeInfo.imageLinks.thumbnail} alt=${results[i].volumeInfo.title}><h2>` + results[i].volumeInfo.title + `</h2>`+ `<i>` + results[i].volumeInfo.authors[0] + `</i><p>` + results[i].volumeInfo.categories[0] + `</p>`;
+                }
             }
         }
         else {
