@@ -8,17 +8,40 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/public/images/Logo2.webp">
     <script type="module" src="/public/js/main.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-     <style>
+    <script type="module" src="/public/js/search.mjs"></script>
+    <style>
         /* Roboto, Roboto Slab, Cinzel, Aleygra Sans SC */
         @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&family=Cinzel&family=Roboto&family=Roboto+Slab&display=swap');
     </style>
 </head>
 <header id="top-header">
+  <span class="siteName">
+    <a href="/" title="Return to home page">Bumblebee Books</a>
+  </span>
+    <nav> 
+      <ul id="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/views/find_book_view/index.html">Books</a></li>
+        <li><a href="/views/account/index.html">Account</a></li>
+        <li><a href="/views//cart/index.html">Cart</a></li>
+      </ul>
+    </nav>
 </header>
   <body>
-        <p>Find A Book</p>
+    <p>Find A Book</p>
+    <div class="search">
+      <label for="book_name">Book Title</label>
+      <input type="text" name="book_name" id="book_name" placeholder="Harry Potter" value="">
+      <button id="getBooks">Find Books</button>
+      <label for="author_name">Author Name</label>
+      <input type="text" name="author_name" id="author_name" placeholder="JK Rowling" value="">
+      <button id="getAuthor">Find Books by Author</button>
+  </div>
+  <main>
+
+  </main>
   </body>
-<footer id="footer">
+<footer>
+  <p class="copyright">&copy; <span id="currentyear"></span> Bumblebee Books | WDD 330</p>
 </footer>
 </html>
