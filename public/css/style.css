@@ -70,6 +70,7 @@ ul#aBook {
 #aBook div i{
     padding-bottom: 1rem;
 }
+/*STYLING FOR BOOK CARDS ON HOME PAGE END*/
 
 /**********************
 ***** HERO IMAGE ******
@@ -97,4 +98,18 @@ ul#aBook {
 }
 #book h2, #book p {
     text-align: center;
+}
+/**********************
+***** HERO IMAGE END **
+**********************/
+
+/**********************
+** Search View Code****
+**********************/
+#search {
+    display: flex;
+    gap: 10px;
+    gap: 10px 20px; 
+    row-gap: 10px;
+    column-gap: 20px;
 }
