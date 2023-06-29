@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bumblebee Books</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/public/css/style.css">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="public\images\Logo2.webp">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/images/Logo2.webp">
     <script type="module" src="/public/js/main.js"></script>
+    <script type="module" src="/public/js/search.mjs"></script>
     <style>
         /* Roboto, Roboto Slab, Cinzel, Aleygra Sans SC */
         @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&family=Cinzel&family=Roboto&family=Roboto+Slab&display=swap');
@@ -27,41 +28,9 @@
     </nav>
 </header>
   <body>
-        <section>
-          <!-- <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category"> -->
-          <form role="search" id="form">
-            <input type="search" id="query" name="q"
-             placeholder="Search..."
-             aria-label="Search through site content">
-            <button>
-              <svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg>
-            </button>
-          </form>
-        </section>
+        <p>Find A Book</p>
   </body>
 <footer>
   <p class="copyright">&copy; <span id="currentyear"></span> Bumblebee Books | WDD 330</p>
 </footer>
 </html>
-
-<!-- https://www.w3schools.com/howto/howto_js_search_menu.asp CODE BELOW -->
-<!-- <script>
-  function myFunction() {
-    // Declare variables
-    var input, filter, ul, li, a, i;
-    input = document.getElementById("mySearch");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("myMenu");
-    li = ul.getElementsByTagName("li");
-  
-    // Loop through all list items, and hide those who don't match the search query
-    for (i = 0; i < li.length; i++) {
-      a = li[i].getElementsByTagName("a")[0];
-      if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        li[i].style.display = "";
-      } else {
-        li[i].style.display = "none";
-      }
-    }
-  }
-  </script> -->
