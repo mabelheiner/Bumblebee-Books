@@ -18,19 +18,52 @@
 <header id="top-header">
 </header>
   <body>
-    <p>Find A Book</p>
-    <div class="search">
-      <label for="book_name">Book Title</label>
-      <input type="text" name="book_name" id="book_name" placeholder="Harry Potter" value="">
-      <button id="getBooks">Find Books</button>
-      <label for="author_name">Author Name</label>
-      <input type="text" name="author_name" id="author_name" placeholder="JK Rowling" value="">
-      <button id="getAuthor">Find Books by Author</button>
+    <h4>Search by Book Title or Author Name:</h4>
+    <div id="searchButtons">
+      <button id="book" onclick="toggleBook();">Search by Title</button>
+      <button id="author" onclick="toggleAuthor();">Search for Author</button>
+  </div>
+    <div hidden="hidden" id="searchBook">
+      <label for="book_name">Book Title:</label>
+        <input type="text" name="book_name" id="book_name" placeholder="Book Title" value="">
+    <button id="getBook">Find Book</button>
+    </div>
+    <div hidden="hidden" id="searchAuthor">
+      <label for="author_name">Author Name:</label>
+        <input type="text" name="author_name" id="author_name" placeholder="Author Name" value="">
+    <button id="getAuthor">Find Book by Author</button>
   </div>
   <main>
-
+<!-- books api here -->
   </main>
   </body>
 <footer id="footer">
 </footer>
 </html>
+
+  <script>
+    let toggleBook = () => {
+  
+      let element = document.getElementById("searchBook");
+      let hidden = element.getAttribute("hidden");
+  
+      if (hidden) {
+         element.removeAttribute("hidden");
+      } else {
+         element.setAttribute("hidden", "hidden");
+      }
+    }
+
+    let toggleAuthor = () => {
+  
+    let element = document.getElementById("searchAuthor");
+    let hidden = element.getAttribute("hidden");
+
+    if (hidden) {
+      element.removeAttribute("hidden");
+    } else {
+      element.setAttribute("hidden", "hidden");
+    }
+  }
+
+  </script>
