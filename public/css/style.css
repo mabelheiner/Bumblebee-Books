@@ -46,7 +46,7 @@ a {
 /* end of navbar css */
 
 /*STYLING FOR BOOK CARDS ON HOME PAGE*/
-ul#aBook {
+#aBook {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
