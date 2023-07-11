@@ -18,7 +18,46 @@
   
 </header>
   <body>
-        <p>Account Page</p>
+    <h4 class="description">Sign in below</h4>
+    <form class="form-widget" on:submit|preventDefault={handleLogin}>
+      <div>
+        <label for="email">Email</label>
+        <input
+          id="email"
+          class="inputField"
+          type="email"
+          placeholder="Your email"
+          bind:value={email}
+        />
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input
+          id="password"
+          class="inputField"
+          type="password"
+          placeholder="Password"
+          bind:value={password}
+        />
+      </div>
+      <div>
+        <button
+          type="submit"
+          class="button primary"
+          aria-live="polite"
+          disabled={loading}>
+        <span>Login</span></button>
+        <button
+          on:click={handleSignup}
+          type="button"
+          class="button block"
+          aria-live="polite"
+          disabled={loading}>
+        <span>Signup</span>
+        </button>
+      </div>
+    </form>
+
   </body>
 <footer id="footer">
 </footer>
