@@ -8,6 +8,9 @@ const supabase = createClient(supabase_url, supabase_key);
 
 window.onload = async function () {
   let { data, error } = await supabase.auth.signInWithOAuth({
-    provider: "google",
+    provider: "github",
+    options: {
+      redirectTo: "http://localhost:5173/views/cart/index.html",
+    },
   });
 };
