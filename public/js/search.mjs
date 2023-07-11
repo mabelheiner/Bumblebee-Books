@@ -19,15 +19,17 @@ async function getBooks(){
             const results = data.items
             console.log(results)
 
+
             for (let i = 0; i < results.length; i++){
                 let book_div = main.appendChild(document.createElement('div'));
+                book_div.classList.add("book");
 
-                if (results[i].volumeInfo.averageRating){
-                    book_div.innerHTML += `<img src=${results[i].volumeInfo.imageLinks.thumbnail} alt=${results[i].volumeInfo.title}><h2>` + results[i].volumeInfo.title + `</h2>`+ `<i>` + results[i].volumeInfo.authors[0] + `</i><p>` + results[i].volumeInfo.averageRating + '★</p><p>' + results[i].volumeInfo.categories[0] + `</p>`;
+                if (results[i].volumeInfo.averageRating){                    
+                    book_div.innerHTML += `<a href="/views/single_book_view/index.html?cover=${results[i].volumeInfo.imageLinks.thumbnail}&title=${results[i].volumeInfo.title}&author=${results[i].volumeInfo.authors[0]}&length=${results[i].volumeInfo.pageCount}&publishedDate=${results[i].volumeInfo.publishedDate}&description=${encodeURIComponent(results[i].volumeInfo.description)}"><img src=${results[i].volumeInfo.imageLinks.thumbnail} alt=${results[i].volumeInfo.title}><h2>` + results[i].volumeInfo.title + `</h2>`+ `<i>` + results[i].volumeInfo.authors[0] + `</i><p>` + results[i].volumeInfo.averageRating + '★</p><p>' + results[i].volumeInfo.categories[0] + `</p></a>`;
                 }
 
                 else {
-                    book_div.innerHTML += `<img src=${results[i].volumeInfo.imageLinks.thumbnail} alt=${results[i].volumeInfo.title}><h2>` + results[i].volumeInfo.title + `</h2>`+ `<i>` + results[i].volumeInfo.authors[0] + `</i><p>` + results[i].volumeInfo.categories[0] + `</p>`;
+                    book_div.innerHTML += `<a href="/views/single_book_view/index.html?cover=${results[i].volumeInfo.imageLinks.thumbnail}&title=${results[i].volumeInfo.title}&author=${results[i].volumeInfo.authors[0]}&length=${results[i].volumeInfo.pageCount}&publishedDate=${results[i].volumeInfo.publishedDate}&description=${encodeURIComponent(results[i].volumeInfo.description)}"><img src=${results[i].volumeInfo.imageLinks.thumbnail} alt=${results[i].volumeInfo.title}><h2>` + results[i].volumeInfo.title + `</h2>`+ `<i>` + results[i].volumeInfo.authors[0] + `</i><p>` + results[i].volumeInfo.categories[0] + `</p>`;
                 }
             }
         }
@@ -56,13 +58,14 @@ async function getAuthor(){
             for (let i = 0; i < results.length; i++){
                 let book_div = main.appendChild(document.createElement('div'));
                 book_div.classList.add("book");
+                book_div.setAttribute("id", "book");
 
                 if (results[i].volumeInfo.averageRating){
-                    book_div.innerHTML += `<img src=${results[i].volumeInfo.imageLinks.thumbnail} alt=${results[i].volumeInfo.title}><h2>` + results[i].volumeInfo.title + `</h2>`+ `<i>` + results[i].volumeInfo.authors[0] + `</i><p>` + results[i].volumeInfo.averageRating + '★</p><p>' + results[i].volumeInfo.categories[0] + `</p>`;
+                    book_div.innerHTML += `<a href="/views/single_book_view/index.html?cover=${results[i].volumeInfo.imageLinks.thumbnail}&title=${results[i].volumeInfo.title}&author=${results[i].volumeInfo.authors[0]}&length=${results[i].volumeInfo.pageCount}&publishedDate=${results[i].volumeInfo.publishedDate}&description=${encodeURIComponent(results[i].volumeInfo.description)}"><img src=${results[i].volumeInfo.imageLinks.thumbnail} alt=${results[i].volumeInfo.title}><h2>` + results[i].volumeInfo.title + `</h2>`+ `<i>` + results[i].volumeInfo.authors[0] + `</i><p>` + results[i].volumeInfo.averageRating + '★</p><p>' + results[i].volumeInfo.categories[0] + `</p></a>`;
                 }
 
                 else {
-                    book_div.innerHTML += `<img src=${results[i].volumeInfo.imageLinks.thumbnail} alt=${results[i].volumeInfo.title}><h2>` + results[i].volumeInfo.title + `</h2>`+ `<i>` + results[i].volumeInfo.authors[0] + `</i><p>` + results[i].volumeInfo.categories[0] + `</p>`;
+                    book_div.innerHTML += `<a href="/views/single_book_view/index.html?cover=${results[i].volumeInfo.imageLinks.thumbnail}&title=${results[i].volumeInfo.title}&author=${results[i].volumeInfo.authors[0]}&length=${results[i].volumeInfo.pageCount}&publishedDate=${results[i].volumeInfo.publishedDate}&description=${encodeURIComponent(results[i].volumeInfo.description)}"><img src=${results[i].volumeInfo.imageLinks.thumbnail} alt=${results[i].volumeInfo.title}><h2>` + results[i].volumeInfo.title + `</h2>`+ `<i>` + results[i].volumeInfo.authors[0] + `</i><p>` + results[i].volumeInfo.categories[0] + `</p></a>`;
                 }
             }
         }
@@ -79,3 +82,4 @@ document.getElementById("getBooks").addEventListener("click", () => {
 document.getElementById("getAuthor").addEventListener("click", () => {
     getAuthor();
 })
+

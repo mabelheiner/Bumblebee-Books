@@ -8,7 +8,8 @@ async function getData() {
     let book_list = "";
     if (response.ok){
         const data = await response.json()
-        console.log("NY Time", data)
+        //console.log(data)
+        //Promise all and then map
   
         const results = [];
         for (let x = 0; x < data.results.length; x++) {
@@ -16,11 +17,7 @@ async function getData() {
         }
   
         //console.log("Results: ", results)
-      /*
-        const details = await Promise.all(results.map(book => fetch('https://www.googleapis.com/books/v1/volumes?q=intitle:' + book + '&filter=paid-ebooks&key=' + google_books_api_key)))
-        console.log("Details", details);
-        */
-        
+  
         for (let i = 0; i < results.length && i < 10; i++){
             const details = await fetch('https://www.googleapis.com/books/v1/volumes?q=intitle:' + results[i] + '&filter=paid-ebooks&key=' + google_books_api_key);
   
@@ -36,7 +33,6 @@ async function getData() {
         }
 
         book_div.innerHTML = book_list;
-        
     }
     else {
       book_div.innerHTML = "<p>Sorry, unable to load top favorites at this time, please search for a book to find it.</p>";
