@@ -13,4 +13,7 @@ window.onload = async function () {
       redirectTo: "http://localhost:5173/views/cart/index.html",
     },
   });
+
+  // console.log(await supabase.auth.getSession());
 };
+
