@@ -13,7 +13,7 @@ async function getBooks(){
     }
     else{
         message = "";
-        const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${book_name}&download=epub&filter=ebooks&key=` + google_books_api_key);
+        const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${book_name}&download=epub&filter=ebooks&maxResults=40&key=` + google_books_api_key);
         if (response.ok){
             let data = await response.json()
             const results = data.items
@@ -63,7 +63,7 @@ async function getAuthor(){
     }
     else{
         message = "";
-        const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=inauthor:${author_name}&filter=ebooks&download=epub&key=` + google_books_api_key);
+        const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=inauthor:${author_name}&filter=ebooks&download=epub&maxResults=40&key=` + google_books_api_key);
         if (response.ok){
             let data = await response.json()
             const results = data.items

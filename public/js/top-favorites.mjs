@@ -19,7 +19,7 @@ async function getData() {
         //console.log("Results: ", results)
   
         for (let i = 0; i < results.length && i < 10; i++){
-            const details = await fetch('https://www.googleapis.com/books/v1/volumes?q=intitle:' + results[i] + '&filter=paid-ebooks&key=' + google_books_api_key);
+            const details = await fetch('https://www.googleapis.com/books/v1/volumes?q=intitle:' + results[i] + '&filter=paid-ebooks&maxResults=40&key=' + google_books_api_key);
   
             const book_info = await details.json();
   
