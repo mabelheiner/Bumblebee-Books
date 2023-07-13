@@ -10,19 +10,23 @@ const supabase_key =
 const supabase = createClient(supabase_url, supabase_key);
 
 checkbox.addEventListener('change', async function() {
-    if (this.checked) {
-        like_button.style.background = "red";
-        console.log("Checkbox is checked..");
-        console.log(await supabase.auth.getSession());
+    if (this.checked) {      
+        const info = await supabase.auth.getSession()
+        try {
+            const userId = info.data.session.user.id
+        } catch {
+            // alert("You must be logged in");
+            window.location.href = 'http://localhost:5173/views/account/login.html';
+        }
+
         const { data, error } = await supabase
             .from('favorites')
             .insert([
-                { user_id: 'af0c1ac2-4264-4d43-b802-ac1ba1cf5af2', book_id: 'YAY0DwAAQBAJ' },
+                { user_id: userId, book_id: 'YAY0DwAAQBAJ' },
             ])
             .select()
     } else {
         console.log("Checkbox is not checked..");
-        like_button.style.background = "blue";
     }
 });
 
