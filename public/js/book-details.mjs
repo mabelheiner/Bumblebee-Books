@@ -7,13 +7,26 @@ async function getBookInfo(){
     let main = document.querySelector("main");
 
     //console.log(urlParams.get("description"));
-    main.innerHTML = `<h2>${urlParams.get("title")}<h2>`;
-    main.innerHTML += `<p><i>${urlParams.get("author")}</i></p>`;
-    main.innerHTML += `<img src=${urlParams.get("cover")}&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api alt=${urlParams.get("title")}>`;
-    main.innerHTML += `<p>Published Date: ${urlParams.get("publishedDate")}</p>`;
-    main.innerHTML += `<p>Page Count: ${urlParams.get("length")} pages</p>`;
-    main.innerHTML += `<p>Price: $${urlParams.get("price")} USD</p>`;
-    main.innerHTML += `<p>${urlParams.get("description")}</p>`;
+    main.innerHTML = `
+  <div class="grid-container">
+    <div class="details">
+      <h2 id="title">${urlParams.get("title")}</h2>
+      <p id="authorName"><i>By: ${urlParams.get("author")}</i></p>
+      <img id="cover" src=${urlParams.get("cover")}&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api alt=${urlParams.get("title")}>
+      <p id="description">${urlParams.get("description")}</p>
+      <p id="publishedDate">First Published ${urlParams.get("publishedDate")}</p>
+      <p id="pageCount">${urlParams.get("length")} Pages Long</p>
+    </div>
+    <label class="like" id="like_button">
+      <input type="checkbox" name="checkbox" />
+      <div class="hearth">
+        <p id="favorite">Favorite</p>
+      </div>
+    </label>
+  </div>
+`;
+
 }
 
 getBookInfo();
+
