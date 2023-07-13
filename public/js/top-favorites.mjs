@@ -19,7 +19,7 @@ async function getData() {
         //console.log("Results: ", results)
   
         for (let i = 0; i < results.length && i < 10; i++){
-            const details = await fetch('https://www.googleapis.com/books/v1/volumes?q=intitle:' + results[i] + '&filter=paid-ebooks&key=' + google_books_api_key);
+            const details = await fetch('https://www.googleapis.com/books/v1/volumes?q=intitle:' + results[i] + '&filter=paid-ebooks&maxResults=40&key=' + google_books_api_key);
   
             const book_info = await details.json();
   
@@ -27,8 +27,19 @@ async function getData() {
   
             if (book_info.totalItems > 0){
   
-              book_list += `<div><img src=${book_info.items[0].volumeInfo.imageLinks.thumbnail} alt=${book_info.items[0].volumeInfo.title}><h2>` + book_info.items[0].volumeInfo.title + `</h2><p>` + book_info.items[0].volumeInfo.authors[0] + `</p>` + `<i>$` + book_info.items[0].saleInfo.listPrice.amount + `</i></div><br>`;
-              //console.log(results[i]);
+              //book_list += `<div><img src=${book_info.items[0].volumeInfo.imageLinks.thumbnail} alt=${book_info.items[0].volumeInfo.title}><h2>` + book_info.items[0].volumeInfo.title + `</h2><p>` + book_info.items[0].volumeInfo.authors[0] + `</p>` + `<i>$` + book_info.items[0].saleInfo.listPrice.amount + `</i></div><br>`;
+              //console.log(book_info.items[0]);
+
+              if (book_info.items[0].volumeInfo.averageRating){    
+                if (book_info.items[0].saleInfo.listPrice.amount) {                    
+                    book_list += `<div><a href="/views/single_book_view/index.html?cover=${book_info.items[0].volumeInfo.imageLinks.thumbnail}&title=${book_info.items[0].volumeInfo.title}&author=${book_info.items[0].volumeInfo.authors[0]}&length=${book_info.items[0].volumeInfo.pageCount}&publishedDate=${book_info.items[0].volumeInfo.publishedDate}&description=${encodeURIComponent(book_info.items[0].volumeInfo.description)}&price=${book_info.items[0].saleInfo.listPrice.amount}"><img src=${book_info.items[0].volumeInfo.imageLinks.thumbnail} alt=${book_info.items[0].volumeInfo.title}><h2>` + book_info.items[0].volumeInfo.title + `</h2><i>` + book_info.items[0].volumeInfo.authors[0] + `</i><p>` + book_info.items[0].volumeInfo.averageRating + '★</p><p>' + book_info.items[0].volumeInfo.categories[0] + `</p><br><p>$` + book_info.items[0].saleInfo.listPrice.amount + `</a></div>`;
+                }
+                else{
+                    const price = 12.99;
+                    book_list += `<div><a href="/views/single_book_view/index.html?cover=${book_info.items[0].volumeInfo.imageLinks.thumbnail}&title=${book_info.items[0].volumeInfo.title}&author=${book_info.items[0].volumeInfo.authors[0]}&length=${book_info.items[0].volumeInfo.pageCount}&publishedDate=${book_info.items[0].volumeInfo.publishedDate}&description=${encodeURIComponent(book_info.items[0].volumeInfo.description)}&price=${price}"><img src=${book_info.items[0].volumeInfo.imageLinks.thumbnail} alt=${book_info.items[0].volumeInfo.title}><h2>` + book_info.items[0].volumeInfo.title + `</h2>`+ `<i>` + book_info.items[0].volumeInfo.authors[0] + `</i><p>` + book_info.items[0].volumeInfo.averageRating + '★</p><p>' + book_info.items[0].volumeInfo.categories[0] + `</p><br><p>$` + price + `</p></a></div>`;
+                
+                }
+            }
             }
         }
 
