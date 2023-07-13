@@ -49,9 +49,40 @@ a {
     text-decoration: none;
     color: black;
 }
-/**********************
-***** NAV BAR END ******
-**********************/
+#logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#logout-button {
+    background: white;
+    --border: 0;
+    font-size: 20px;
+}
+#logout-button:hover {
+    color: white;
+    background-color: #1E2D2F;
+}
+/* end of navbar css */
+
+/* STYLING FOR LOGIN PAGE */
+#login-form label {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#signup {
+    margin: 30px;
+    padding: 30px;
+    border: black;
+    border-radius: 10px;
+}
+.sign-button p {
+    margin-bottom: 5px;
+    font-size: large;
+}
+
+/* STYLING FOR SIGNUP PAGE */
+
 
 /**********************
 ***** TOP FAVORITES START ******
