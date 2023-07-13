@@ -87,6 +87,13 @@ a {
 /**********************
 ***** TOP FAVORITES START ******
 **********************/
+#book h2 {
+  font-size: 24px; 
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
 #aBook {
     display: flex;
     flex-wrap: wrap;
@@ -104,6 +111,10 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: transform 0.3s ease; 
+}
+#aBook div:hover {
+  transform: scale(1.1);
 }
 #aBook div img{
     padding-top: 1rem;
@@ -159,8 +170,8 @@ div {
  
 /* buttons */
 button {
-    --border: 5px;    /* the border width */
-    --slant: 0.7em;   /* control the slanted corners */
+    --border: 5px;    
+    --slant: 0.7em; 
     
     font-size: 25px;
     padding: 0.4em 1.2em;
