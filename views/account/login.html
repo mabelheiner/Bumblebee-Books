@@ -8,7 +8,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/public/images/Logo2.webp">
     <script type="module" src="/public/js/main.js"></script>
-    <script type="module" src="/public/js/database.js"></script>
+    <script type="module" src="/public/js/database.js" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
      <style>
         /* Roboto, Roboto Slab, Cinzel, Aleygra Sans SC */
@@ -16,38 +16,31 @@
     </style>
 </head>
 <header id="top-header">
-  
+
 </header>
-  <body>
-    <p>Account Page</p>
+<body>
 
-    <!-- Registration Form -->
-    <!-- <h2>Register</h2>
-    <form id="registration-form">
-      <label for="email">Email:</label>
-      <input type="email" id="email" required><br>
-
-      <label for="password">Password:</label>
-      <input type="password" id="password" required><br>
-
-      <button type="submit">Register</button>
-    </form> -->
-
-    <!-- Login Form -->
-    <!-- <h2>Login</h2>
+  <!-- Login Form -->
+  <h2>Login</h2>
+  <h3 id="login-message"></h3>
+  <div class="form-style">
     <form id="login-form">
       <label for="email">Email:</label>
-      <input type="email" id="email" required><br>
+      <input type="email" id="login-email" autocomplete="username" required><br>
 
       <label for="password">Password:</label>
-      <input type="password" id="password" required><br>
+      <input type="password" id="login-password" autocomplete="current-password" required><br>
 
       <button type="submit">Login</button>
-    </form> -->
+    </form>
+  </div>
 
-    <!-- Logout Button -->
-    <button id="logout-button">Logout</button>
-  </body>
+  <div class="sign-button">
+    <p>Not a member?</p>
+    <button><a id="signup" href="./signup.html">Signup</a></button>
+  </div>
+
+</body>
 <footer id="footer">
 </footer>
 </html>
