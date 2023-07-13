@@ -34,7 +34,7 @@
     display: block;
 }
 
-#menu {
+#menu, #logout-button {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -45,7 +45,7 @@ li {
     margin: 15px;
     font-size: larger;
 }
-a {
+a, #logout-button {
     text-decoration: none;
     color: black;
 }
@@ -55,13 +55,17 @@ a {
     justify-content: space-between;
 }
 #logout-button {
-    background: white;
-    --border: 0;
-    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
 }
 #logout-button:hover {
-    color: white;
-    background-color: #1E2D2F;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  background-color: black;
+  /* padding: 0.4em 1.2em; */
+  border: 6px solid black;
+  border-radius: 20px;
+  color: var(--naplesYellow);
 }
 /* end of navbar css */
 
