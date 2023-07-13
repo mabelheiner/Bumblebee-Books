@@ -12,7 +12,9 @@
     Aleygra Sans SC
 */
 
-/* color css codes */
+/**********************
+***** COLOR CODES START ******
+**********************/
 :root {
     --black: #000000;
     --naplesYellow: #FFE25F;
@@ -21,13 +23,17 @@
     --white: #FFFFFF;
     --battleshipGray: #7E8D85;
 }
-/* end of color css codes */
+/**********************
+***** COLOR CODES END ******
+**********************/
 
+/**********************
+***** NAV BAR START ******
+**********************/
 #top-header {
     display: block;
 }
 
-/* navbar css */
 #menu {
     display: flex;
     flex-direction: row;
@@ -43,9 +49,13 @@ a {
     text-decoration: none;
     color: black;
 }
-/* end of navbar css */
+/**********************
+***** NAV BAR END ******
+**********************/
 
-/*STYLING FOR BOOK CARDS ON HOME PAGE*/
+/**********************
+***** TOP FAVORITES START ******
+**********************/
 #aBook {
     display: flex;
     flex-wrap: wrap;
@@ -72,7 +82,7 @@ a {
 }
 
 /**********************
-***** HERO IMAGE ******
+***** HERO IMAGE START******
 **********************/
 #heroImg {
     display: block;
@@ -98,8 +108,13 @@ a {
 #book h2, #book p {
     text-align: center;
 }
+/**********************
+***** HERO IMAGE END ******
+**********************/
 
-/* Search Book View Start */
+/**********************
+***** SEARCH BOOK VIEW START ******
+**********************/
 h4 {
     text-align: center;
     margin: 15px;
@@ -151,4 +166,155 @@ input {
 label {
     font-size: 30px;
 }
-/* SEARCH BOOK VIEW END */
+/**********************
+***** SEARCH BOOK VIEW END ******
+**********************/
+
+/**********************
+***** SINGLE BOOK VIEW START ******
+**********************/
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: beige;
+  border: 3px 4px solid var(--battleshipGray); /* Add a border to the image */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+
+}
+
+.details {
+  grid-column: 1 / 3;
+}
+
+#cover {
+  grid-column: 1 / 2;
+  border-radius: 10px; 
+  max-width: 600px; 
+  height: 450px;
+  border: 3px solid var(--naplesYellow); 
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease; 
+}
+#cover:hover {
+  transform: perspective(500px) rotateY(19deg) rotateX(19deg);
+}
+
+#authorName,
+#description,
+#publishedDate,
+#pageCount {
+  grid-column: 2 / 3;
+}
+#title {
+  font-size: 24px; 
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease; 
+}
+#authorName {
+  font-weight: bold; 
+  color: #555; 
+  font-style: italic;
+  transition: transform 0.3s ease; 
+}
+#description {
+  font-size: 16px; 
+  color: #666; 
+  line-height: 1.5;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease; 
+}
+#description:hover {
+  transform: scaleY(1.3);
+}
+#publishedDate, #pageCount {
+  font-weight: bold;
+  color: #333; 
+  font-style: italic;
+  transition: transform 0.3s ease; 
+}
+
+#title:hover, #authorName:hover, #publishedDate:hover, #pageCount:hover {
+  transform: scale3d(1.5, 1.2, 0.3);
+}
+
+/* Heart checkbox button start */
+ :root {
+    --size: 100px;
+    --frames: 62;
+  } 
+  
+    html {
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+  } 
+  
+  .like input {
+    display: none;
+  }
+  
+  .like {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    display: block;
+    width: var(--size);
+    height: var(--size);
+    cursor: pointer;
+    border-radius: 999px;
+    overflow: visible;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .hearth {
+    background-image: url('https://assets.codepen.io/23500/Hashflag-AppleEvent.svg');
+    background-size: calc(var(--size) * var(--frames)) var(--size);
+    background-repeat: no-repeat;
+    background-position-x: calc(var(--size) * (var(--frames) * -1 + 2));
+    background-position-y: calc(var(--size) * 0.02);
+    width: var(--size);
+    height: var(--size);
+  }
+  
+  input:checked + .hearth {
+    animation: like 1s steps(calc(var(--frames) - 3));  
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes like {
+    0% {
+      background-position-x: 0;
+    }
+    100% {
+      background-position-x: calc(var(--size) * (var(--frames) * -1 + 3));
+    }
+  }
+  
+  @media (hover: hover) {
+    .like:hover {
+      background-color: #E1255E15;
+      .hearth {
+        background-position-x: calc(var(--size) * (var(--frames) * -1 + 1));
+      }
+    }
+  }
+  #favorite {
+    color: var(--gunmetal);
+    font-size: 15px;
+    background-color: var(--naplesYellow);
+  }
+/* Heart checkbox button end */
+
+/**********************
+***** SINGLE BOOK VIEW END ******
+**********************/
