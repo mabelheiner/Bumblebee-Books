@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bumblebee Books</title>
-    <link rel="stylesheet" href="/public/css/style.css">
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/public/images/Logo2.webp">
-    <script type="module" src="/public/js/main.js"></script>
-    <script type="module" src="/public/js/database.js" defer></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-     <style>
-        /* Roboto, Roboto Slab, Cinzel, Aleygra Sans SC */
-        @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&family=Cinzel&family=Roboto&family=Roboto+Slab&display=swap');
-    </style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bumblebee Books</title>
+  <link rel="stylesheet" href="/public/css/style.css">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/public/images/Logo2.webp">
+  <script type="module" src="/public/js/main.js"></script>
+  <script type="module" src="/public/js/database.js" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <style>
+    /* Roboto, Roboto Slab, Cinzel, Alegreya Sans SC */
+    @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&family=Cinzel&family=Roboto&family=Roboto+Slab&display=swap');
+  </style>
 </head>
-<header id="top-header">
-
-</header>
 <body>
+<header id="top-header">
+</header>
 
-  <!-- Login Form -->
-  <h2>Login</h2>
-  <h3 id="login-message"></h3>
+<!-- Login Form -->
+<div id="login">
   <div class="form-style">
+    <h2 id="loginh2">Login Here By Entering Your Email And Password</h2>
     <form id="login-form">
       <label for="email">Email:</label>
       <input type="email" id="login-email" autocomplete="username" required><br>
@@ -35,12 +34,13 @@
     </form>
   </div>
 
-  <div class="sign-button">
-    <p>Not a member?</p>
-    <button><a id="signup" href="./signup.html">Signup</a></button>
+  <div class="reg-button">
+    <p id="member">Not a member?</p>
+    <button><a id="register" href="./register.html">Register</a></button>
   </div>
+</div>
 
-</body>
 <footer id="footer">
 </footer>
+</body>
 </html>
