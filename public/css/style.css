@@ -427,3 +427,23 @@ label {
 /**********************
 ***** SINGLE BOOK VIEW END ******
 **********************/
+
+/**********************
+***** Login Button on Favs Page START ******
+**********************/
+#login-on-favs-button {
+  text-align: center;
+  font-size: 24px; 
+  font-weight: bold;
+  color: var(--naplesYellow);
+  text-transform: uppercase; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#login-on-favs-button a {
+  text-align: center;
+  margin-top: 10px;
+}
+/**********************
+***** Login Button on Favs Page END ******
+**********************/
