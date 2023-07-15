@@ -69,23 +69,81 @@ a, #logout-button {
 }
 /* end of navbar css */
 
-/* STYLING FOR LOGIN PAGE */
-#login-form label {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-#signup {
-    margin: 30px;
-    padding: 30px;
-    border: black;
-    border-radius: 10px;
-}
-.sign-button p {
-    margin-bottom: 5px;
-    font-size: large;
+/* LOGIN AND SIGNUP PAGE START */
+#loginh2, #regh2 {
+  text-align: center;
+  font-size: 24px; 
+  font-weight: bold;
+  color: var(--naplesYellow);
+  text-transform: uppercase; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease; 
 }
 
-/* STYLING FOR SIGNUP PAGE */
+#login-message, #sign-message {
+  text-align: center;
+}
+
+.form-style {
+  max-width: 300px;
+  margin: 0 auto; 
+  background-color: var(--battleshipGray);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border: 3px solid var(--gunmetal);
+  border-radius: 15px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+  color: var(--black);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: white;
+}
+
+.reg-button {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.reg-button p {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.reg-button button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+#member {
+  font-weight: bold; 
+  color: #555; 
+  font-style: italic;
+  transition: transform 0.3s ease; 
+}
+/* LOGIN AND SIGNUP PAGE END */
 
 
 /**********************
