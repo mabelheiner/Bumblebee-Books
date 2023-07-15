@@ -67,9 +67,13 @@ a, #logout-button {
   border-radius: 20px;
   color: var(--naplesYellow);
 }
-/* end of navbar css */
+/**********************
+***** NAVBAR END ******
+**********************/
 
-/* LOGIN AND SIGNUP PAGE START */
+/**********************
+***** LOGIN, SINGUP PAGE START ******
+**********************/
 #loginh2, #regh2 {
   text-align: center;
   font-size: 24px; 
@@ -143,8 +147,9 @@ button[type="submit"]:hover {
   font-style: italic;
   transition: transform 0.3s ease; 
 }
-/* LOGIN AND SIGNUP PAGE END */
-
+/**********************
+***** LOGIN, SIGNUP PAGE END ******
+**********************/
 
 /**********************
 ***** TOP FAVORITES START ******
