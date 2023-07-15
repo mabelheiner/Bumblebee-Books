@@ -6,7 +6,7 @@ const info = await supabase.auth.getSession()
 
 if(info.data.session == null) {
   let main = document.querySelector("main");
-  main.innerHTML = "<button><a href='http://localhost:5173/views/account/login.html'>Log In to View This Page</a></button>";
+  main.innerHTML = "<button id='login-on-favs-button'><a href='http://localhost:5173/views/account/login.html'>Log In to View This Page</a></button>";
   let message = document.body.appendChild(document.createElement("div"))
   // window.location.href = 'http://localhost:5173/views/account/login.html';
   // alert("Please log in");
