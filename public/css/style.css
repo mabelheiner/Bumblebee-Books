@@ -33,7 +33,9 @@
 #top-header {
     display: block;
 }
-
+#menu {
+  box-shadow: 0 0 10px var(--gunmetal);
+}
 #menu, #logout-button {
     display: flex;
     flex-direction: row;
@@ -50,9 +52,18 @@ a, #logout-button {
     color: black;
 }
 #logo {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  background-color: var(--naplesYellow);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--gunmetal);
+}
+#logo img {
+  max-width: 100%;
+  max-height: 100%;
 }
 #logout-button {
     border: none;
@@ -78,16 +89,13 @@ a, #logout-button {
   text-align: center;
   font-size: 24px; 
   font-weight: bold;
-  color: var(--naplesYellow);
   text-transform: uppercase; 
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease; 
 }
-
 #login-message, #sign-message {
   text-align: center;
 }
-
 .form-style {
   max-width: 300px;
   margin: 0 auto; 
@@ -96,12 +104,10 @@ a, #logout-button {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
 label {
   display: block;
   margin-bottom: 10px;
 }
-
 input[type="email"],
 input[type="password"] {
   width: 100%;
@@ -111,7 +117,6 @@ input[type="password"] {
   box-sizing: border-box;
   margin-bottom: 10px;
 }
-
 button[type="submit"] {
   width: 100%;
   padding: 10px;
@@ -121,21 +126,17 @@ button[type="submit"] {
   border-radius: 4px;
   cursor: pointer;
 }
-
 button[type="submit"]:hover {
   background-color: white;
 }
-
 .reg-button {
   text-align: center;
   margin-top: 10px;
 }
-
 .reg-button p {
   display: inline-block;
   margin-right: 10px;
 }
-
 .reg-button button {
   background-color: transparent;
   border: none;
@@ -200,6 +201,7 @@ button[type="submit"]:hover {
     position: relative;
     margin-bottom: 20px;
     border-radius: 10px;
+    box-shadow: 0 0 10px var(--gunmetal);
 }
 #heroText {
     text-align:center;
@@ -213,6 +215,8 @@ button[type="submit"]:hover {
 #companyMoto {
     text-align: center;
     margin: 50px;
+    padding: 10px;
+    box-shadow: 0 0 10px var(--gunmetal);
 }
 #book h2, #book p {
     text-align: center;
@@ -234,7 +238,6 @@ div {
     margin-right: 25px;
     margin-bottom: 25px;
 }
- 
 /* buttons */
 button {
     --border: 5px;    
@@ -265,8 +268,7 @@ button {
     background-size: 100% 100%;
     --t: 0.2s 0.1s;
     color: var(--black);
-  }
-  
+  } 
 /* inputs */
 input {
     font-size: 20px;
@@ -294,11 +296,9 @@ label {
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 
 }
-
 .details {
   grid-column: 1 / 3;
 }
-
 #cover {
   grid-column: 1 / 2;
   border-radius: 10px; 
@@ -311,7 +311,6 @@ label {
 #cover:hover {
   transform: perspective(500px) rotateY(19deg) rotateX(19deg);
 }
-
 #authorName,
 #description,
 #publishedDate,
@@ -348,28 +347,23 @@ label {
   font-style: italic;
   transition: transform 0.3s ease; 
 }
-
 #title:hover, #authorName:hover, #publishedDate:hover, #pageCount:hover {
   transform: scale3d(1.5, 1.2, 0.3);
 }
-
 /* Heart checkbox button start */
  :root {
     --size: 100px;
     --frames: 62;
   } 
-  
     html {
     min-height: 100vh;
     justify-content: center;
     align-items: center;
     user-select: none;
   } 
-  
   .like input {
     display: none;
   }
-  
   .like {
     position: fixed;
     bottom: 0;
@@ -384,7 +378,6 @@ label {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-tap-highlight-color: transparent;
   }
-  
   .hearth {
     background-image: url('https://assets.codepen.io/23500/Hashflag-AppleEvent.svg');
     background-size: calc(var(--size) * var(--frames)) var(--size);
@@ -394,12 +387,10 @@ label {
     width: var(--size);
     height: var(--size);
   }
-  
   input:checked + .hearth {
     animation: like 1s steps(calc(var(--frames) - 3));  
     animation-fill-mode: forwards;
   }
-  
   @keyframes like {
     0% {
       background-position-x: 0;
@@ -408,7 +399,6 @@ label {
       background-position-x: calc(var(--size) * (var(--frames) * -1 + 3));
     }
   }
-  
   @media (hover: hover) {
     .like:hover {
       background-color: #E1255E15;
@@ -423,7 +413,6 @@ label {
     background-color: var(--naplesYellow);
   }
 /* Heart checkbox button end */
-
 /**********************
 ***** SINGLE BOOK VIEW END ******
 **********************/
@@ -439,7 +428,6 @@ label {
   text-transform: uppercase; 
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
-
 #login-on-favs-button a {
   text-align: center;
   margin-top: 10px;
