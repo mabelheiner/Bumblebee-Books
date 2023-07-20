@@ -38,43 +38,9 @@ async function getBooks(){
 
                 let pageCount = results[i]?.volumeInfo?.pageCount ?? 'n/a';
 
-                let publishedDate = results[i]?.volumeInfo?.publishedDate ?? 'n/a';
-
-                console.log("Full details: ", results[i]);
-
-                console.log("Price: ", results[i]?.saleInfo?.listPrice?.amount ?? 12.99);
-
-                console.log("Author: ", results[i]?.volumeInfo?.authors ?? 'n/a');
-
-
-
-                //console.log("Current book: ", results[i].volumeInfo.authors[0]);
-                //console.log("results: ", typeof results[i].saleInfo.listPrice.amount);
-                //console.log("result type: ", typeof results[i].saleInfo.listPrice.amount === "number");
-                //console.log("testing: ", results[i].saleInfo.listPrice.amount !== "undefined");
-                //console.log("List Price: ", listPrice);
-
-                if (results[i].volumeInfo.averageRating){                       
-                    if (true) {                    
-                        book_div.innerHTML += `<a href="/views/single_book_view/index.html?cover=${results[i].volumeInfo.imageLinks.thumbnail}&title=${title}&author=${author}&length=${pageCount}&publishedDate=${publishedDate}&description=${encodeURIComponent(description)}&price=${listPrice}"><img src=${results[i].volumeInfo.imageLinks.thumbnail} alt=${title}><h2>` + title + `</h2><i>` + author + `</i><p>` + averageRating + '★</p><p>' + category + `</p><br><p>$` + listPrice + `</a>`;
-                    }
-                    else{
-                        const price = 12.99;
-                        book_div.innerHTML += `<a href="/views/single_book_view/index.html?cover=${results[i].volumeInfo.imageLinks.thumbnail}&title=${results[i].volumeInfo.title}&author=${author}&length=${results[i].volumeInfo.pageCount}&publishedDate=${results[i].volumeInfo.publishedDate}&description=${encodeURIComponent(results[i].volumeInfo.description)}&price=${listPrice}"><img src=${results[i].volumeInfo.imageLinks.thumbnail} alt=${results[i].volumeInfo.title}><h2>` + results[i].volumeInfo.title + `</h2>`+ `<i>` + results[i].volumeInfo.authors[0] + `</i><p>` + results[i].volumeInfo.averageRating + '★</p><p>' + results[i].volumeInfo.categories[0] + `</p><br><p>$` + price + `</p></a>`;
-                    
-                    }
-                }
-
-                else {
-                    if (true){
-                        book_div.innerHTML += `<a href="/views/single_book_view/index.html?cover=${results[i].volumeInfo.imageLinks.thumbnail}&title=${title}&author=${author}&length=${pageCount}&publishedDate=${publishedDate}&description=${encodeURIComponent(description)}&price=${listPrice}"><img src=${results[i].volumeInfo.imageLinks.thumbnail} alt=${title}><h2>` + title + `</h2><i>` + author + `</i><p>` + category + `</p><br><p>$` + listPrice + `</a>`;
-                    }
-                    else {
-                        const price = 12.99;
-                        book_div.innerHTML += `<a href="/views/single_book_view/index.html?cover=${results[i].volumeInfo.imageLinks.thumbnail}&title=${results[i].volumeInfo.title}&author=${author}&length=${results[i].volumeInfo.pageCount}&publishedDate=${results[i].volumeInfo.publishedDate}&description=${encodeURIComponent(results[i].volumeInfo.description)}&price=${listPrice}"><img src=${results[i].volumeInfo.imageLinks.thumbnail} alt=${results[i].volumeInfo.title}><h2>` + results[i].volumeInfo.title + `</h2>`+ `<i>` + results[i].volumeInfo.authors[0] + `</i><p>` + results[i].volumeInfo.categories[0] + `</p><br><p>$` + price + `</p></a>`;
-                    
-                    }
-                    }
+                let publishedDate = results[i]?.volumeInfo?.publishedDate ?? 'n/a';       
+                
+                book_div.innerHTML += `<a href="/views/single_book_view/index.html?cover=${results[i].volumeInfo.imageLinks.thumbnail}&title=${title}&author=${author}&length=${pageCount}&publishedDate=${publishedDate}&description=${encodeURIComponent(description)}"><img src=${results[i].volumeInfo.imageLinks.thumbnail} alt=${title}><h2>` + title + `</h2><i>` + author + `</i><p>` + averageRating + '★</p><p>' + category + `</p><br><p>$` + listPrice + `</a>`;
             }
         }
         else {
@@ -119,42 +85,8 @@ async function getAuthor(){
                 let pageCount = results[i]?.volumeInfo?.pageCount ?? 'n/a';
 
                 let publishedDate = results[i]?.volumeInfo?.publishedDate ?? 'n/a';
-
-                console.log("Full details: ", results[i]);
-
-                console.log("Price: ", results[i]?.saleInfo?.listPrice?.amount ?? 12.99);
-
-                console.log("Author: ", results[i]?.volumeInfo?.authors ?? 'n/a');
-
-
-
-                //console.log("Current book: ", results[i].volumeInfo.authors[0]);
-                //console.log("results: ", typeof results[i].saleInfo.listPrice.amount);
-                //console.log("result type: ", typeof results[i].saleInfo.listPrice.amount === "number");
-                //console.log("testing: ", results[i].saleInfo.listPrice.amount !== "undefined");
-                //console.log("List Price: ", listPrice);
-
-                if (results[i].volumeInfo.averageRating){                       
-                    if (true) {                    
-                        book_div.innerHTML += `<a href="/views/single_book_view/index.html?cover=${results[i].volumeInfo.imageLinks.thumbnail}&title=${title}&author=${author}&length=${pageCount}&publishedDate=${publishedDate}&description=${encodeURIComponent(description)}&price=${listPrice}"><img src=${results[i].volumeInfo.imageLinks.thumbnail} alt=${title}><h2>` + title + `</h2><i>` + author + `</i><p>` + averageRating + '★</p><p>' + category + `</p><br><p>$` + listPrice + `</a>`;
-                    }
-                    else{
-                        const price = 12.99;
-                        book_div.innerHTML += `<a href="/views/single_book_view/index.html?cover=${results[i].volumeInfo.imageLinks.thumbnail}&title=${results[i].volumeInfo.title}&author=${author}&length=${results[i].volumeInfo.pageCount}&publishedDate=${results[i].volumeInfo.publishedDate}&description=${encodeURIComponent(results[i].volumeInfo.description)}&price=${listPrice}"><img src=${results[i].volumeInfo.imageLinks.thumbnail} alt=${results[i].volumeInfo.title}><h2>` + results[i].volumeInfo.title + `</h2>`+ `<i>` + results[i].volumeInfo.authors[0] + `</i><p>` + results[i].volumeInfo.averageRating + '★</p><p>' + results[i].volumeInfo.categories[0] + `</p><br><p>$` + price + `</p></a>`;
-                    
-                    }
-                }
-
-                else {
-                    if (true){
-                        book_div.innerHTML += `<a href="/views/single_book_view/index.html?cover=${results[i].volumeInfo.imageLinks.thumbnail}&title=${title}&author=${author}&length=${pageCount}&publishedDate=${publishedDate}&description=${encodeURIComponent(description)}&price=${listPrice}"><img src=${results[i].volumeInfo.imageLinks.thumbnail} alt=${title}><h2>` + title + `</h2><i>` + author + `</i><p>` + category + `</p><br><p>$` + listPrice + `</a>`;
-                    }
-                    else {
-                        const price = 12.99;
-                        book_div.innerHTML += `<a href="/views/single_book_view/index.html?cover=${results[i].volumeInfo.imageLinks.thumbnail}&title=${results[i].volumeInfo.title}&author=${author}&length=${results[i].volumeInfo.pageCount}&publishedDate=${results[i].volumeInfo.publishedDate}&description=${encodeURIComponent(results[i].volumeInfo.description)}&price=${listPrice}"><img src=${results[i].volumeInfo.imageLinks.thumbnail} alt=${results[i].volumeInfo.title}><h2>` + results[i].volumeInfo.title + `</h2>`+ `<i>` + results[i].volumeInfo.authors[0] + `</i><p>` + results[i].volumeInfo.categories[0] + `</p><br><p>$` + price + `</p></a>`;
-                    
-                    }
-                    }
+                  
+                book_div.innerHTML += `<a href="/views/single_book_view/index.html?cover=${results[i].volumeInfo.imageLinks.thumbnail}&title=${title}&author=${author}&length=${pageCount}&publishedDate=${publishedDate}&description=${encodeURIComponent(description)}"><img src=${results[i].volumeInfo.imageLinks.thumbnail} alt=${title}><h2>` + title + `</h2><i>` + author + `</i><p>` + averageRating + '★</p><p>' + category + `</p><br><p>$` + listPrice + `</a>`;
             }
         }
         else {
