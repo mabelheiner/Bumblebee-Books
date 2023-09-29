@@ -1,0 +1,437 @@
+/* COLORS:
+    Black: #000000
+    Naples Yellow: #FFE25F
+    Gunmetal: #1E2D2F
+    White: #FFFFFF
+    Battleship Gray: #7E8D85 
+*/
+/* FONTS: 
+    Roboto, 
+    Roboto Slab, 
+    Cinzel, 
+    Aleygra Sans SC
+*/
+
+/**********************
+***** COLOR CODES START ******
+**********************/
+:root {
+    --black: #000000;
+    --naplesYellow: #FFE25F;
+    --lightYellow: rgb(241, 244, 230);
+    --gunmetal: #1E2D2F;
+    --white: #FFFFFF;
+    --battleshipGray: #7E8D85;
+}
+/**********************
+***** COLOR CODES END ******
+**********************/
+
+/**********************
+***** NAV BAR START ******
+**********************/
+#top-header {
+    display: block;
+}
+#menu {
+  box-shadow: 0 0 10px var(--gunmetal);
+}
+#menu, #logout-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style-type: none;
+    background-color: #FFE25F;
+}
+li {
+    margin: 15px;
+    font-size: larger;
+}
+a, #logout-button {
+    text-decoration: none;
+    color: black;
+}
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  background-color: var(--naplesYellow);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--gunmetal);
+}
+#logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+#logout-button {
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+#logout-button:hover {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  background-color: black;
+  /* padding: 0.4em 1.2em; */
+  border: 6px solid black;
+  border-radius: 20px;
+  color: var(--naplesYellow);
+}
+/**********************
+***** NAVBAR END ******
+**********************/
+
+/**********************
+***** LOGIN, SINGUP PAGE START ******
+**********************/
+#loginh2, #regh2 {
+  text-align: center;
+  font-size: 24px; 
+  font-weight: bold;
+  text-transform: uppercase; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease; 
+}
+#login-message, #sign-message {
+  text-align: center;
+}
+.form-style {
+  max-width: 300px;
+  margin: 0 auto; 
+  background-color: var(--battleshipGray);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border: 3px solid var(--gunmetal);
+  border-radius: 15px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+  color: var(--black);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button[type="submit"]:hover {
+  background-color: white;
+}
+.reg-button {
+  text-align: center;
+  margin-top: 10px;
+}
+.reg-button p {
+  display: inline-block;
+  margin-right: 10px;
+}
+.reg-button button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+#member {
+  font-weight: bold; 
+  color: #555; 
+  font-style: italic;
+  transition: transform 0.3s ease; 
+}
+/**********************
+***** LOGIN, SIGNUP PAGE END ******
+**********************/
+
+/**********************
+***** TOP FAVORITES START ******
+**********************/
+#book h2 {
+  font-size: 24px; 
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+#aBook {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+}
+#aBook div {
+    background: var(--lightYellow);
+    width: 15em;
+    margin: 0.5rem;
+    align-items: center;
+    text-align: center;
+    border: 6px solid var(--battleshipGray);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease; 
+}
+#aBook div:hover {
+  transform: scale(1.1);
+}
+#aBook div img{
+    padding-top: 1rem;
+}
+#aBook div i{
+    padding-bottom: 1rem;
+}
+
+/**********************
+***** HERO IMAGE START******
+**********************/
+#heroImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--gunmetal);
+}
+#heroText {
+    text-align:center;
+    position: absolute;
+    top: 350px;
+    left: 27%;
+    background-color: #FFE25F;
+    padding: 10px;
+    border-radius: 10px;
+}
+#companyMoto {
+    text-align: center;
+    margin: 50px;
+    padding: 10px;
+    box-shadow: 0 0 10px var(--gunmetal);
+}
+#book h2, #book p {
+    text-align: center;
+}
+/**********************
+***** HERO IMAGE END ******
+**********************/
+
+/**********************
+***** SEARCH BOOK VIEW START ******
+**********************/
+h4 {
+    text-align: center;
+    margin: 15px;
+    font-size: 35px;
+ }
+div {
+    text-align: center;
+    margin-right: 25px;
+    margin-bottom: 25px;
+}
+/* buttons */
+button {
+    --border: 5px;    
+    --slant: 0.7em; 
+    
+    font-size: 25px;
+    padding: 0.4em 1.2em;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--gunmetal);
+    background: 
+       linear-gradient(to bottom left,var(--naplesYellow)  50%,#0000 50.1%) top right,
+       linear-gradient(to top   right,var(--naplesYellow)  50%,#0000 50.1%) bottom left;
+    background-size: calc(var(--slant) + 1.3*var(--border)) calc(var(--slant) + 1.3*var(--border));
+    background-repeat: no-repeat;
+    box-shadow:
+      0 0 0 200px inset var(--s,#0000),
+      0 0 0 var(--border) inset var(--naplesYellow);
+    clip-path: 
+        polygon(0 0, calc(100% - var(--slant)) 0, 100% var(--slant),
+                100% 100%, var(--slant) 100%,0 calc(100% - var(--slant))
+               );
+    transition: color var(--t,0.3s), background-size 0.3s;
+  }
+  button:hover,
+  button:active{
+    background-size: 100% 100%;
+    --t: 0.2s 0.1s;
+    color: var(--black);
+  } 
+/* inputs */
+input {
+    font-size: 20px;
+}
+/* labels */
+label {
+    font-size: 30px;
+}
+/**********************
+***** SEARCH BOOK VIEW END ******
+**********************/
+
+/**********************
+***** SINGLE BOOK VIEW START ******
+**********************/
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: beige;
+  border: 3px 4px solid var(--battleshipGray); /* Add a border to the image */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+
+}
+.details {
+  grid-column: 1 / 3;
+}
+#cover {
+  grid-column: 1 / 2;
+  border-radius: 10px; 
+  max-width: 600px; 
+  height: 450px;
+  border: 3px solid var(--naplesYellow); 
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease; 
+}
+#cover:hover {
+  transform: perspective(500px) rotateY(19deg) rotateX(19deg);
+}
+#authorName,
+#description,
+#publishedDate,
+#pageCount {
+  grid-column: 2 / 3;
+}
+#title {
+  font-size: 24px; 
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease; 
+}
+#authorName {
+  font-weight: bold; 
+  color: #555; 
+  font-style: italic;
+  transition: transform 0.3s ease; 
+}
+#description {
+  font-size: 16px; 
+  color: #666; 
+  line-height: 1.5;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease; 
+}
+#description:hover {
+  transform: scaleY(1.3);
+}
+#publishedDate, #pageCount {
+  font-weight: bold;
+  color: #333; 
+  font-style: italic;
+  transition: transform 0.3s ease; 
+}
+#title:hover, #authorName:hover, #publishedDate:hover, #pageCount:hover {
+  transform: scale3d(1.5, 1.2, 0.3);
+}
+/* Heart checkbox button start */
+ :root {
+    --size: 100px;
+    --frames: 62;
+  } 
+    html {
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+  } 
+  .like input {
+    display: none;
+  }
+  .like {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    display: block;
+    width: var(--size);
+    height: var(--size);
+    cursor: pointer;
+    border-radius: 999px;
+    overflow: visible;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+  }
+  .hearth {
+    background-image: url('https://assets.codepen.io/23500/Hashflag-AppleEvent.svg');
+    background-size: calc(var(--size) * var(--frames)) var(--size);
+    background-repeat: no-repeat;
+    background-position-x: calc(var(--size) * (var(--frames) * -1 + 2));
+    background-position-y: calc(var(--size) * 0.02);
+    width: var(--size);
+    height: var(--size);
+  }
+  input:checked + .hearth {
+    animation: like 1s steps(calc(var(--frames) - 3));  
+    animation-fill-mode: forwards;
+  }
+  @keyframes like {
+    0% {
+      background-position-x: 0;
+    }
+    100% {
+      background-position-x: calc(var(--size) * (var(--frames) * -1 + 3));
+    }
+  }
+  @media (hover: hover) {
+    .like:hover {
+      background-color: #E1255E15;
+      .hearth {
+        background-position-x: calc(var(--size) * (var(--frames) * -1 + 1));
+      }
+    }
+  }
+  #favorite {
+    color: var(--gunmetal);
+    font-size: 15px;
+    background-color: var(--naplesYellow);
+  }
+/* Heart checkbox button end */
+/**********************
+***** SINGLE BOOK VIEW END ******
+**********************/
+
+/**********************
+***** Login Button on Favs Page START ******
+**********************/
+#login-on-favs-button {
+  text-align: center;
+  font-size: 24px; 
+  font-weight: bold;
+  color: var(--naplesYellow);
+  text-transform: uppercase; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+#login-on-favs-button a {
+  text-align: center;
+  margin-top: 10px;
+}
+/**********************
+***** Login Button on Favs Page END ******
+**********************/
